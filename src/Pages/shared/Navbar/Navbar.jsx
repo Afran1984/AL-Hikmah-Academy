@@ -1,7 +1,16 @@
-import React from 'react'
 import './Navbar.css'
 import sitelogo from '../../../../public/img/Al.png'
+import { NavLink } from 'react-router'
 const Navbar = () => {
+    const navItems = <>
+    <a><NavLink to="/">Home</NavLink></a>
+    <a><NavLink to="/admission">Admission</NavLink></a>
+    <a><NavLink to="/results">Results</NavLink></a>
+    <a><NavLink to="/notice">Notice</NavLink></a>
+    <a><NavLink to="/payment">Payment</NavLink></a>
+    <a><NavLink to="/contact">Contact</NavLink></a>
+    
+    </>
   return (
     <div className="nav-top">
         <div class="brand">
@@ -12,15 +21,10 @@ const Navbar = () => {
             </div>
         </div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#admission">Admission</a>
-            <a href="#results">Results</a>
-            <a href="#notice">Notice</a>
-            <a href="#payment">Payment</a>
-            <a href="#contact">Contact</a>
+           {navItems}
         </nav>
         <div>
-            <button className='btn btn-primary'>Student LogIn</button>
+            <button className='btn btn-primary'> <NavLink to="/login"> Student LogIn </NavLink></button>
         </div>
         
       
