@@ -1,7 +1,9 @@
 import './Navbar.css'
 import sitelogo from '../../../../public/img/Al.png'
 import { NavLink } from 'react-router'
+import { useState } from 'react'
 const Navbar = () => {
+    const [open, setOpen] = useState(false);
     const navItems = <>
     <a><NavLink to="/">Home</NavLink></a>
     <a><NavLink to="/admission">Admission</NavLink></a>
@@ -20,12 +22,20 @@ const Navbar = () => {
                 <small>3 No. Road, Mozaffer Nagor, Khulshi, CTG</small>
             </div>
         </div>
-        <nav>
+        <nav className='hidden md:flex items-center gap-5 text[16px font-mono]'>
            {navItems}
         </nav>
         <div>
             <button className='btn btn-primary'> <NavLink to="/login"> Student LogIn </NavLink></button>
         </div>
+
+        <button className='md:hidden text-2xl'
+        onClick={() => setOpen(!open)}
+        >{open ? "X" : "☰"}</button>
+
+        {
+            open && <nav className='md:hidden flex flex-col items-center gap-3 py-3 bg-cyan-100 '>{navItems}</nav>
+        }
         
       
     </div>
