@@ -1,12 +1,10 @@
 import React from 'react'
+import BannerSec from '../BannerSec/BannerSec'
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
-      <h1>Components</h1>
-        <h1>Pages</h1>
-        <input type="text" />
+      <BannerSec></BannerSec>
     </div>
   )
 }
