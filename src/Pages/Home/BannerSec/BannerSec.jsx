@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router';
 
 const BannerSec = () => {
   return (
@@ -19,9 +20,15 @@ const BannerSec = () => {
                 </p>
             </div>
             <div className='flex gap-3'>
-                <button className='btn'>Download Application</button>
-                <button className='btn btn-primary'>Application</button>
+                <button className='btn'>
+                    <Link to="/admission">Download Application</Link>
+                </button>
+
+                <button className='btn btn-primary'>
+                    <Link to="/admission">Application</Link>
+                </button>
             </div>
+
         </div>
     </div>
   )
